@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MovieDetail : View {
-    var movie: NewsListItem
+    var movie: MoviesListItem
     
     var body: some View {
         VStack() {

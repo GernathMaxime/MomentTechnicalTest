@@ -13,8 +13,8 @@
 		74D8E8E32428FEBA0099C4AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D8E8E22428FEBA0099C4AB /* Assets.xcassets */; };
 		74D8E8E62428FEBA0099C4AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D8E8E52428FEBA0099C4AB /* Preview Assets.xcassets */; };
 		74D8E8E92428FEBA0099C4AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D8E8E72428FEBA0099C4AB /* LaunchScreen.storyboard */; };
-		74D8E8F22428FEBA0099C4AB /* NewFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D8E8F12428FEBA0099C4AB /* NewFeedView.swift */; };
-		74D8E8F52428FEBA0099C4AB /* NewsFeedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D8E8F42428FEBA0099C4AB /* NewsFeedModels.swift */; };
+		74D8E8F22428FEBA0099C4AB /* MovieFeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D8E8F12428FEBA0099C4AB /* MovieFeedView.swift */; };
+		74D8E8F52428FEBA0099C4AB /* MoviesFeedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D8E8F42428FEBA0099C4AB /* MoviesFeedModels.swift */; };
 		74D8E8F72428FEBA0099C4AB /* UrlImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D8E8F62428FEBA0099C4AB /* UrlImageModel.swift */; };
 		74D8E8F92428FEBA0099C4AB /* UrlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D8E8F82428FEBA0099C4AB /* UrlImageView.swift */; };
 		74D8E8FB2428FEBA0099C4AB /* UrlPosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D8E8FA2428FEBA0099C4AB /* UrlPosterView.swift */; };
@@ -30,8 +30,8 @@
 		74D8E8E52428FEBA0099C4AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		74D8E8E82428FEBA0099C4AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74D8E8EA2428FEBA0099C4AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74D8E8F12428FEBA0099C4AB /* NewFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFeedView.swift; sourceTree = "<group>"; };
-		74D8E8F42428FEBA0099C4AB /* NewsFeedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedModels.swift; sourceTree = "<group>"; };
+		74D8E8F12428FEBA0099C4AB /* MovieFeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFeedView.swift; sourceTree = "<group>"; };
+		74D8E8F42428FEBA0099C4AB /* MoviesFeedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesFeedModels.swift; sourceTree = "<group>"; };
 		74D8E8F62428FEBA0099C4AB /* UrlImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlImageModel.swift; sourceTree = "<group>"; };
 		74D8E8F82428FEBA0099C4AB /* UrlImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlImageView.swift; sourceTree = "<group>"; };
 		74D8E8FA2428FEBA0099C4AB /* UrlPosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlPosterView.swift; sourceTree = "<group>"; };
@@ -92,7 +92,7 @@
 		74D8E8F02428FEBA0099C4AB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				74D8E8F12428FEBA0099C4AB /* NewFeedView.swift */,
+				74D8E8F12428FEBA0099C4AB /* MovieFeedView.swift */,
 				74D8E8F82428FEBA0099C4AB /* UrlImageView.swift */,
 				74D8E8FA2428FEBA0099C4AB /* UrlPosterView.swift */,
 				74D8E8FC2428FEBA0099C4AB /* ModalView.swift */,
@@ -103,7 +103,7 @@
 		74D8E8F32428FEBA0099C4AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				74D8E8F42428FEBA0099C4AB /* NewsFeedModels.swift */,
+				74D8E8F42428FEBA0099C4AB /* MoviesFeedModels.swift */,
 				74D8E8F62428FEBA0099C4AB /* UrlImageModel.swift */,
 			);
 			path = Model;
@@ -180,10 +180,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74D8E8F52428FEBA0099C4AB /* NewsFeedModels.swift in Sources */,
+				74D8E8F52428FEBA0099C4AB /* MoviesFeedModels.swift in Sources */,
 				74D8E8FB2428FEBA0099C4AB /* UrlPosterView.swift in Sources */,
 				74D8E8DD2428FEBA0099C4AB /* AppDelegate.swift in Sources */,
-				74D8E8F22428FEBA0099C4AB /* NewFeedView.swift in Sources */,
+				74D8E8F22428FEBA0099C4AB /* MovieFeedView.swift in Sources */,
 				74D8E8DF2428FEBA0099C4AB /* SceneDelegate.swift in Sources */,
 				74D8E8E12428FEBA0099C4AB /* ContentView.swift in Sources */,
 				74D8E8FD2428FEBA0099C4AB /* ModalView.swift in Sources */,

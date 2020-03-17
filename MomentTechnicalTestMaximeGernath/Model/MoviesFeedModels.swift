@@ -12,10 +12,10 @@ struct Global {
     static let api_key: String = "f73178cd5673afa07212f2424346be42"
 }
 
-class NewsFeed: ObservableObject, RandomAccessCollection {
-    typealias Element = NewsListItem
+class MoviesFeed: ObservableObject, RandomAccessCollection {
+    typealias Element = MoviesListItem
     
-    @Published var newsListItems = [NewsListItem]()
+    @Published var newsListItems = [MoviesListItem]()
     
     var startIndex: Int { newsListItems.startIndex }
     var endIndex: Int { newsListItems.endIndex }
@@ -26,11 +26,11 @@ class NewsFeed: ObservableObject, RandomAccessCollection {
         loadMoreArticles()
     }
     
-    subscript(position: Int) -> NewsListItem {
+    subscript(position: Int) -> MoviesListItem {
         return newsListItems[position]
     }
     
-    func loadMoreArticles(currentItem: NewsListItem? = nil) {
+    func loadMoreArticles(currentItem: MoviesListItem? = nil) {
         
         if !shouldLoadMoreData(currentItem: currentItem) {
             return
@@ -42,11 +42,11 @@ class NewsFeed: ObservableObject, RandomAccessCollection {
         let urlString = "\(urlBase)\(page)"
         
         let url = URL(string: urlString)!
-        let task = URLSession.shared.dataTask(with: url, completionHandler: parseArticlesFromResponse(data:response:error:))
+        let task = URLSession.shared.dataTask(with: url, completionHandler: parseMoviesFromResponse(data:response:error:))
         task.resume()
     }
     
-    func shouldLoadMoreData(currentItem: NewsListItem? = nil) -> Bool {
+    func shouldLoadMoreData(currentItem: MoviesListItem? = nil) -> Bool {
         guard let currentItem = currentItem else {
             return true
         }
@@ -59,7 +59,7 @@ class NewsFeed: ObservableObject, RandomAccessCollection {
         return false
     }
     
-    func parseArticlesFromResponse(data: Data?, response: URLResponse?, error: Error?) {
+    func parseMoviesFromResponse(data: Data?, response: URLResponse?, error: Error?) {
         guard error == nil else {
             print("Error: \(error!)")
             loadStatus = .parseError
@@ -71,10 +71,10 @@ class NewsFeed: ObservableObject, RandomAccessCollection {
             return
         }
         
-        let newArticles = parseArticlesFromData(data: data)
+        let newMovies = parseMoviesFromData(data: data)
         DispatchQueue.main.async {
-            self.newsListItems.append(contentsOf: newArticles)
-            if newArticles.count == 0 {
+            self.newsListItems.append(contentsOf: newMovies)
+            if newMovies.count == 0 {
                 self.loadStatus = .done
             } else {
                 guard case let .loading(page) = self.loadStatus else {
@@ -85,10 +85,10 @@ class NewsFeed: ObservableObject, RandomAccessCollection {
         }
     }
     
-    func parseArticlesFromData(data: Data) -> [NewsListItem] {
-        var response: NewsApiResponse
+    func parseMoviesFromData(data: Data) -> [MoviesListItem] {
+        var response: MoviesApiResponse
         do {
-            response = try JSONDecoder().decode(NewsApiResponse.self, from: data)
+            response = try JSONDecoder().decode(MoviesApiResponse.self, from: data)
         } catch {
             print("Error parsing the JSON: \(error)")
             return []
@@ -105,11 +105,11 @@ class NewsFeed: ObservableObject, RandomAccessCollection {
     }
 }
 
-class NewsApiResponse: Codable {
-    var results: [NewsListItem]?
+class MoviesApiResponse: Codable {
+    var results: [MoviesListItem]?
 }
 
-class NewsListItem: Identifiable, Codable {
+class MoviesListItem: Identifiable, Codable {
     var uuid = UUID()
     
     var overview: String?

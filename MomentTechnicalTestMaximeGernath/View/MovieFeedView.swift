@@ -8,19 +8,19 @@
 
 import SwiftUI
 
-struct NewsFeedView: View {
+struct MoviesFeedView: View {
     init() {
         UITableViewCell.appearance().backgroundColor = UIColor(red: 20/255, green: 29/255, blue: 38/255, alpha: 1.0)
         UITableView.appearance().backgroundColor = UIColor(red: 20/255, green: 29/255, blue: 38/255, alpha: 1.0)
     }
     
-    @ObservedObject var newsFeed = NewsFeed()
+    @ObservedObject var newsFeed = MoviesFeed()
     
     var body: some View {
         NavigationView() {
-            List(newsFeed) { (movie: NewsListItem) in
+            List(newsFeed) { (movie: MoviesListItem) in
                 NavigationLink(destination: MovieDetail(movie: movie)) {
-                    NewsListItemView(movie: movie)
+                    MoviesListItemView(movie: movie)
                         .onAppear {
                             self.newsFeed.loadMoreArticles(currentItem: movie)
                     }
@@ -31,8 +31,8 @@ struct NewsFeedView: View {
     }
 }
 
-struct NewsListItemView: View {
-    var movie: NewsListItem
+struct MoviesListItemView: View {
+    var movie: MoviesListItem
     
     var body: some View {
         HStack {
@@ -49,6 +49,6 @@ struct NewsListItemView: View {
 
 struct NewsFeedView_Previews: PreviewProvider {
     static var previews: some View {
-        NewsFeedView()
+        MoviesFeedView()
     }
 }
